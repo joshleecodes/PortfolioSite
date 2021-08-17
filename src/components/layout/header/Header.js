@@ -3,7 +3,7 @@ import { HashLink as NavLink } from 'react-router-hash-link';
 import { scrollToTop, scrollTo } from './../../../util/scrollHelper';
 
 //Icon Imports
-import SiteLogo from './../../../assets/imgs/SVG/site-logo.svg';
+import SiteLogo from './../../../assets/imgs/site-logo.png';
 import GithubIcon from './../../../assets/imgs/SVG/social-icons/github/github.svg';
 import LinkedInIcon from './../../../assets/imgs/SVG/social-icons/linkedin/linkedin.svg';
 import EmailIcon from './../../../assets/imgs/SVG/social-icons/email/email.svg';
@@ -14,7 +14,7 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentSection: 'nav-landing'
+            currentSection: 'nav-landing',
         }
         this.handleActiveSection = this.handleActiveSection.bind(this);
     }
@@ -25,6 +25,7 @@ export default class Header extends React.Component {
     }
 
     handleActiveSection() {
+        if(this.props.isMobile) {return;}
        let offset = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
        let currentSection = this.state.currentSection;
        let currentSectionClassList = document.getElementById(this.state.currentSection).classList;

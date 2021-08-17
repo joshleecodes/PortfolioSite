@@ -3,6 +3,7 @@ import Carousel from '@brainhubeu/react-carousel';
 
 import ProjectData from './../../../assets/json/projects.json';
 import CodingIcon from '../../../assets/imgs/coding-icon-display.png';
+import MobileCodingIcon from '../../../assets/imgs/coding-icon.png'
 
 import ReactText from '../../../assets/imgs/react.png';
 import NodeText from '../../../assets/imgs/node-js.png';
@@ -58,7 +59,8 @@ export default class Home extends React.Component {
                     I am seeking exposure to modern web technologies, with a tech stack centred around React and NodeJS.
                     </p>
                 </div>
-                <div className="home-content__image-wrapper" data-aos="fade-left" data-aos-duration="1500" data-aos-anchor-placement="top-botto m" data-aos-once="true">
+                <img className="home-content__image-mobile" src={MobileCodingIcon}/>
+                <div className="home-content__image-wrapper">
                     <img className="home-content__image" src={CodingIcon} alt="coding-logo"/>
                     <div className="carousel__wrapper-skills">
                         <Carousel

@@ -1,27 +1,130 @@
 .project-wrapper {
-    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: row;
     color: white;
+    height: 12vh;
+    width: 100%;
+    border-bottom: 1px solid $dark-gray;
 }   
 
 .project__img {
-    width: 36rem;
-    height: 22rem;
+    height: inherit;
+    width: 30vw;
+    flex-grow: 0;
     object-fit: cover;
+}
+
+.project-title__wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: inherit;
+}
+
+.project-title__mobile {
+    display: flex;
+    flex-direction: column;
+    font-size: $m-size;
+    background-color: $dark-gray;
+    color: $off-white;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.project-tech__mobile {
+    flex-grow: 0;
+    background-color: $light-gray;
+    color: $dark-gray;
+    font-size: $s-size;
+    font-weight: bold;
+    padding: 0.5vh 0;
+}
+
+.project-title__mobile, .project-tech__mobile{
+    margin: 0;
+    text-transform: uppercase;
+    padding-left: 2vw;
+}
+
+.close-project__mobile{
+    display: none;
+    position: absolute;
+    top:12vh;
+    right:22vh;
+    padding: 1vh 3vw;
+    color: #F5A623;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid #F5A623;
+    margin-bottom: 1vh;
+    width: max-content;
+    align-self: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    height: 81vh;
+    background-color: $light-gray;
+    z-index: 3;
+    overflow: scroll;
+    position: absolute;
+    top:19.3vh;
+}
+.modal-img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.modal-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.modal-info__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.modal-title {
+    font-size: 2rem;
+    background-color: $dark-gray;
+    margin: 0;
+    width: 100%;
+    padding: 1vh 5vw;
+}
+
+.modal-stack {
+    margin: 0;
+    background-color: $yellow;
+    justify-self: flex-end;
+    padding: 0.5vh 5vw;
+    height: 3vh;
+}
+
+.modal-body-wrapper {
+    color: $dark-gray;
+    padding: 1vh 5vw;
+}
+
+.modal-github-icon {
+    height: 6vh;
 }
 
 .project-overlay {
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     background: $dark-gray;
     opacity: 0%;
-    width: 100%;
+    width: 98%;
     height: 100%;
     transition: opacity 0.5s;
 }
@@ -59,104 +162,141 @@
     border: 1px solid $yellow;
 }
 
+.project-back__button-wrapper {
+    display: none;
+    justify-content: center;
+    padding: 2vh 0;
+    border-bottom: 1px solid $yellow;
+}
+
+.project-back__button{
+    display: flex;
+    padding: 1vh 2vw;
+    color: #F5A623;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid #F5A623;
+}
+
+@media (min-width: 1920px) {
+
+    .project-title__wrapper{
+        display: none;
+    }
+
+    .project__img {
+        width: 21.5vw;
+        height: 25vh;
+        object-fit: cover;
+    }
+
+    .project-overlay {
+        display: flex;
+    }
+
+    .project-wrapper {
+        height: 25vh;
+    }
+
+
 //Modal Styling
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        width: 60rem;
+    }
 
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    width: 60rem;
-}
+    .modal-img-wrapper {
+        position: relative;
+        width: inherit;
+        height: 35rem;
+        object-fit: cover;
+    }
 
-.modal-img-wrapper {
-    position: relative;
-    width: inherit;
-    height: 35rem;
-    object-fit: cover;
-}
+    .modal-img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+    }
 
-.modal-img {
-    width: inherit;
-    height: inherit;
-    object-fit: cover;
-}
+    .modal-img-buttons {
+        position: absolute;
+        top: 45%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
 
-.modal-img-buttons {
-    position: absolute;
-    top: 45%;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
+    .modal-img-buttons img {
+        width: $l-size;
+    }
 
-.modal-img-buttons img {
-    width: $l-size;
-}
+    .modal-wrapper {
+        padding: 0;
+    }
 
-.modal-wrapper {
-    padding: 0;
-}
+    .modal-title-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+        width: inherit;
+        height: auto;
+        align-items: baseline;
+        background-color: $yellow;
+    }
 
-.modal-title-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-    width: inherit;
-    height: auto;
-    align-items: baseline;
-    background-color: $yellow;
-}
+    .modal-title {
+        font-size: $m-size;
+        margin: 0;
+        color: white;
+        background-color: $dark-gray;
+        padding: $xs-size $m-size $xs-size $xl-size;
+        min-width: 52%;
+        letter-spacing: $xs-size;
+    }
 
-.modal-title {
-    font-size: $m-size;
-    margin: 0;
-    color: white;
-    background-color: $dark-gray;
-    padding: $xs-size $m-size $xs-size $xl-size;
-    min-width: 52%;
-    letter-spacing: $xs-size;
-}
+    .modal-stack {
+        margin: 0;
+        color: $dark-gray;
+        padding: $xs-size $xl-size $xs-size $m-size;
+        letter-spacing: $xs-size;
+        font-size: $s-size;
+    }
 
-.modal-stack {
-    margin: 0;
-    color: $dark-gray;
-    padding: $xs-size $xl-size $xs-size $m-size;
-    letter-spacing: $xs-size;
-    font-size: $s-size;
-}
+    .modal-body-wrapper {
+        padding: $m-size $xl-size;
+        background-color: $light-gray;
+    }
 
-.modal-body-wrapper {
-    padding: $m-size $xl-size;
-    background-color: $light-gray;
-}
+    .github-wrapper {
+        display: flex;
+        flex-direction: row;
+        padding: 0 $m-size $m-size $xl-size;
+        background-color: $light-gray;
+    }
 
-.github-wrapper {
-    display: flex;
-    flex-direction: row;
-    padding: 0 $m-size $m-size $xl-size;
-    background-color: $light-gray;
-}
+    .github-wrapper a {
+        text-decoration: none;
+        outline: none;
+        color: $dark-gray;
+    }
 
-.github-wrapper a {
-    text-decoration: none;
-    outline: none;
-    color: $dark-gray;
-}
+    .modal-github-icon {
+        width: $l-size;
+        align-self: center;
+        padding-right: $s-size;
+    }
 
-.modal-github-icon {
-    width: $l-size;
-    align-self: center;
-    padding-right: $s-size;
-}
+    .modal-github-link {
+        font-size: $m-size;
+    }
 
-.modal-github-link {
-    font-size: $m-size;
-}
-
-#test {
-    background: $yellow;
-    position: absolute;
-    top: 0;
-    right: 0;
-    outline: none;
+    #closeIcon {
+        background: $yellow;
+        position: absolute;
+        top: 0;
+        right: 0;
+        outline: none;
+    }
 }

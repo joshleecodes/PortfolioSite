@@ -1,7 +1,6 @@
 .header {
-    display: none;
+    display: flex;
 }
-
 .mobile-menu {
     width : inherit;
     height: inherit;
@@ -9,14 +8,17 @@
     justify-content: center;
 }
 
-@media (min-width: 2160) { 
+@media (min-width: 1920px) { 
     .header {
+        display: flex;
         background-color: white;
         background-clip: padding-box;
-        padding: $xs-size $xl-size 0 $xl-size;
+        padding: 0 5vw;
         font-family: $title-font;
         z-index: 2;
-        width: 95%;
+        width: 90vw;
+        height: 10vh;
+        border-bottom: 1px solid $off-white;
     }
     
     .header__border {
@@ -25,18 +27,20 @@
     
     .header__container, .header__content-section, .header__content-section__site-link-wrapper, .header__content-section__social-link-wrapper
     {
+
         display: flex;
         flex-direction: row;
     }
     
     .header__container {
+        display: flex;
         justify-content: space-between;
         align-items: center;
+        width: inherit;
     }
     
     .header__logo {
-        width: auto;
-        height: $xl-size;
+        height: 5vh;
         cursor: pointer;
     }
     

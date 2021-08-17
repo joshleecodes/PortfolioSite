@@ -1,19 +1,31 @@
 .mobile-menu__wrapper {
-    width: 100vw;
+    width: 10vw;
+    height: 10vh;
+    position: fixed;
+    right:0;
+    top:0;
+    z-index: 2;
+}
+
+.mobile-menu__wrapper-open {
+    width: 100%;
     height: 100vh;
     position: fixed;
-    z-index: 1;
+    right:0;
+    top:0;
+    z-index: 2;
 }
 
 .menu-icon {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 5%;
-    width: 8vw;
+    margin: 5vw;
+    width: 5vw;
+    z-index: 3;
 }
 
-.menu-close, .menu-list__wrapper {
+.menu-close {
     display: none;
 }
 
@@ -22,10 +34,11 @@
 }
 
 .menu__site-icon {
-    width: 50vw;
+    width: 35vw;
     display: flex;
     justify-content: center;
     align-self: center;
+    padding-bottom: $m-size;
 }
 
 .menu-list {
@@ -34,7 +47,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: $off-white;
 }
 
 .menu-option {
@@ -47,11 +60,37 @@
 .menu-link {
     color: $dark-gray;
     text-decoration: none;
-    font-size: 3rem;
+    text-align: center;
+    font-size: 2rem;
     font-weight: bold;
-    border-bottom: 2px solid $dark-gray;
+    width: 30vw;
+}
+
+.menu-link__active {
+    color: $yellow;
 }
 
 .currentSection {
     background-color: $yellow;
+}
+
+.open-cv {
+    color: white;
+    background-color: $yellow;
+    border: 1px solid $yellow;
+    padding: 2vw;
+    font-weight: lighter;
+}
+
+.mobile-social__wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+}
+
+.mobile-social {
+    width: 10vw;
+    padding: 0 1vw;
 }

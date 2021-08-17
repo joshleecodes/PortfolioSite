@@ -2,6 +2,8 @@ html {
     width: 100%;
     font-size: 62.5%;
     position: absolute;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -11,6 +13,10 @@ body {
     color: $dark-gray;
     padding: 0;
     margin: 0;
+}
+
+.content {
+    z-index: -1;
 }
 
 a, button {
@@ -26,8 +32,8 @@ input:focus::placeholder {
 }
 
 h2 {
-    font-size: $l-size;
-    letter-spacing: $s-size;
+    font-size: $title;
+    letter-spacing: $xs-size;
 }
 
 
@@ -39,6 +45,10 @@ h2 {
 // laptop
 @media (min-width: 1200px) {}
 // PC
-@media (min-width: 1920px) {}
+@media (min-width: 1920px) {
+    h2 {
+        font-size: $l-size;
+    }
+}
 // high res
 @media (min-width: 2160) {}

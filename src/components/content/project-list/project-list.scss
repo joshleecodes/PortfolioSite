@@ -3,42 +3,71 @@
     height: 70vh;
     padding: 15vh 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.projects-content__heap__title {
-    padding: 0 10vw;
+.projects-content__heap__title-wrapper{
+    display: flex;
+    justify-content: center;
 }
 
-.projects-content__heap__search-form {
-    display: none;
+.projects-content__mobile-search-button {
+    display: flex;
+    padding: 1vh 2vw;
+    color: $yellow;
+    background-color: white;
+    font-weight: bold;
+    border: 1px solid $yellow;
+    margin-bottom: 3vh;
 }
 
 .not-found {
     border: 1px solid red;
 }
 
-.projects-content__heap__search-bar:focus {
-    width: 80%;
-    content: none;
-}
-
-.carousel {
+.projects-content__heap__search-form{
     display: none;
 }
 
-.carousel__mobile {
-    width: 100vw;
-} 
+.projects-content__heap__search-bar:focus {
+    width: 50vw;
+    content: none;
+}
+
+.carousel__wrapper {
+    display: none;
+}
 
 
-@media (min-width: 2160) {
+
+@media (min-width: 1920px) {
+
+
+    .projects-content__mobile-search-button{
+        display: none;
+    }
+
+    .projects-content__heap__search-form {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .projects-content__heap__search-bar {
+        display: flex;
+        width: 35vw;
+        transition: width 0.4s ease-in-out;
+        padding: $xs-size 0;
+        text-align: center;
+    }
+
     .projects-section {
-        padding: 10rem 10rem;
         background-color: $off-white;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: fit-content;
     }
     
     .projects-content__featured {
@@ -68,6 +97,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }
     
     .projects-content__heap__title-wrapper, .projects-content__featured__title-wrapper {
@@ -78,6 +108,7 @@
     
     .projects-content__heap__title {
         padding-right: $xs-size;
+        padding-top: 5vh;
     }
     
     .projects-content__heap__title-highlight {
@@ -108,11 +139,21 @@
     }
     
     //CAROUSEL STYLING
+
+    .carousel__mobile{
+        display: none;
+    }
     
     .carousel__wrapper {
+        display: block;
         padding: $l-size 0 $m-size 0 ;
-        width: 70vw;
-        min-width: 70vw;
+        width: 72vw;
+    }
+
+    .carousel {
+        display: flex; 
+        align-items: space-between;
+        height: 25vh;
     }
     
     .search-bar__feedback__wrapper {
@@ -124,12 +165,6 @@
         min-height: 16vw;
         max-height: 16vw;
     }
-    
-    .brainhubCarousel {
-        display: flex; 
-        align-items: space-between;
-    }
-    
     
     //CUSTOM ARROW STYLING
     .arrow__wrapper, .arrow-disabled__wrapper {
@@ -149,7 +184,7 @@
     .arrow__wrapper:hover {
         background: none;
         color: $yellow;
-        height: 21.8rem;
+        height: 24.7vh;
     }
     
     .arrow__text {

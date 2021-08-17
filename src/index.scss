@@ -9,6 +9,7 @@
 @import './components/content/blog/blog';
 @import './components/content/project-list/project-list';
 @import './components/content/project-item/project-item';
+@import './components/content//project-search/project-search';
 @import './components/content/featured-project/featured-project';
 @import './components/content/cv/cv';
 @import './components/content/contact/contact';
@@ -16,12 +17,16 @@
 .sticky {
     position: fixed;
     top: 0;
-    width: 95%;
+    width: 90vw;
 }
 
 .sticky-body {
-    padding-top: 65px;
+    padding-top: 10vh;
 }
 
-
-
+[data-aos] {
+    pointer-events: none;
+    &.aos-animate {
+      pointer-events: auto;
+    }
+}

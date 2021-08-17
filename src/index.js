@@ -20,7 +20,6 @@ import Footer from './components/layout/footer/Footer';
 import SiteIcon from './assets/imgs/site-logo.png';
 import SiteHoverIcon from './assets/imgs/site-logo-inverted.png';
 
-
 //SVG Imports
 import Github from './assets/imgs/SVG/social-icons/github/github.svg';
 import GithubActive from './assets/imgs/SVG/social-icons/github/github-active.svg';
@@ -31,15 +30,21 @@ import Email from './assets/imgs/SVG/social-icons/email/email.svg';
 import EmailActive from './assets/imgs/SVG/social-icons/email/email-active.svg';
 import ReturnTop from './assets/imgs/SVG/arrow-icons/returnTop.svg';
 import ReturnTopActive from './assets/imgs/SVG/arrow-icons/returnTop-active.svg'
+import { init } from 'emailjs-com';
 
-//break points - width
-//landscape     576
-// tablet       768
-// laptop       1200
-// PC           1920
-// high res >   >1920
 
 AOS.init();
+
+let isMobile = false;
+let initialOffSet;
+
+const handleResize = () => {
+    isMobile = window.innerWidth <= 768;
+    initialOffSet = window.innerHeight;
+    console.log(initialOffSet);
+}
+
+window.onresize = handleResize();
 
 let handleIconHover = (e) => {
     let icon = e.currentTarget.id;
@@ -94,13 +99,15 @@ let handleIconHoverOff = (e) => {
 }
 
 let headerOffSet;
+
 let setHeaderOffSet = (value) => {
     headerOffSet = value;
 }
+
 let handleStickyHeader = (initialOffSet) => {
     let header = document.getElementById("header");
     let body = document.getElementById("body-content");
-    if(window.pageYOffset >= initialOffSet+200) {
+    if(window.pageYOffset >= initialOffSet) {
         header.classList.add("sticky");
         body.classList.add('sticky-body');
     } else {
@@ -109,20 +116,28 @@ let handleStickyHeader = (initialOffSet) => {
     }
 }
 
-// window.onscroll = () => {
-//     handleStickyHeader(headerOffSet);
-// };
+if(isMobile == false){
+    window.onscroll = () => {
+        handleStickyHeader(headerOffSet);
+    }
+}
+
 
 const routes = (
     <BrowserRouter>
         <div>
-            <MobileMenu/>
+            { isMobile &&
+                <MobileMenu/> 
+            }     
             <Landing/>
-            <Header
-                handleIconHover={handleIconHover} 
-                handleIconHoverOff={handleIconHoverOff}
-                setHeaderOffSet={setHeaderOffSet}
-            />
+            { isMobile == false &&
+                <Header
+                    handleIconHover={handleIconHover} 
+                    handleIconHoverOff={handleIconHoverOff}
+                    setHeaderOffSet={setHeaderOffSet}
+                    isMobile={isMobile}
+                />
+            }
             <Switch>
                 <div id="body-content">
                     <Route
@@ -137,32 +152,42 @@ const routes = (
                                 <ProjectList
                                 handleIconHover={handleIconHover} 
                                 handleIconHoverOff={handleIconHoverOff}
+                                isMobile={isMobile}
                                 />
                         }
                         exact={true}
                     />
-                    
+                    { isMobile == false &&
+                        <Route
+                            path="/" 
+                            render={
+                                (props) => 
+                                    <Cv/>
+                            }
+                            exact={true}
+                        />
+                    }
                     <Route
-                        path="/" 
-                        render={
-                            (props) => 
-                                <Contact 
-                                handleIconHover={handleIconHover} 
-                                handleIconHoverOff={handleIconHoverOff}
-                                />
-                        } 
-                        exact={true}
+                    path="/" 
+                    render={
+                        (props) => 
+                            <Contact 
+                            handleIconHover={handleIconHover} 
+                            handleIconHoverOff={handleIconHoverOff}
+                            />
+                    } 
+                    exact={true}
                     />
                     <Route
-                        path="/" 
-                        render={
-                            (props) => 
-                                <Footer 
-                                handleIconHover={handleIconHover} 
-                                handleIconHoverOff={handleIconHoverOff}
-                                />
-                        } 
-                        exact={true}
+                    path="/" 
+                    render={
+                        (props) => 
+                            <Footer 
+                            handleIconHover={handleIconHover} 
+                            handleIconHoverOff={handleIconHoverOff}
+                            />
+                    } 
+                    exact={true}
                     />
                 </div>
             </Switch>

@@ -2,10 +2,10 @@ import React from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
-import ProjectItem from '../project-item/project-item';
+import ProjectItem from '../project-item/Project-item';
 import FeaturedProject from '../featured-project/Featured-project';
 import ProjectData from './../../../assets/json/projects.json';
-
+import ProjectSearch from './../project-search/project-search';
 
 export default class ProjectList extends React.Component { 
     constructor(){
@@ -15,10 +15,12 @@ export default class ProjectList extends React.Component {
             featuredProject: [],
             projectList: [],
             isEmpty: false,
-            searchValue: ""
+            searchValue: "",
+            searchOpen: false
         }
         this.serveProjectHeap = this.serveProjectHeap.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
+        this.handleCloseSearchMenu = this.handleCloseSearchMenu.bind(this);
     }
 
     componentDidMount() {
@@ -27,6 +29,7 @@ export default class ProjectList extends React.Component {
             let projectItem = 
             <ProjectItem
                 key={project.id}
+                id={project.id}
                 title={project.title}
                 githubLink={project.githublink}
                 techStack={project.techstack.join('/')}
@@ -35,6 +38,7 @@ export default class ProjectList extends React.Component {
                 descriptionTwo={project.descriptionTwo}
                 handleIconHover={this.props.handleIconHover} 
                 handleIconHoverOff={this.props.handleIconHoverOff}
+                isMobile={this.props.isMobile}
             />
             if(project.featured === "true") {
                 let tempfeaturedProject = 
@@ -52,14 +56,17 @@ export default class ProjectList extends React.Component {
                 featuredProject.push(tempfeaturedProject);
             }
             return projectItem;
-        })
-        this.setState({featuredProject});
-        this.setState({projectData});
-        this.setState({projectList: projectData});
+        }) 
+
+        this.setState({featuredProject, projectData, projectList: projectData});
     }
     
     handleSearch(e){
         this.setState({searchValue: e.target.value}, this.serveProjectHeap)
+    }
+
+    handleCloseSearchMenu(){
+        this.setState({searchOpen: false});
     }
 
     serveProjectHeap(){
@@ -91,6 +98,7 @@ export default class ProjectList extends React.Component {
     }
 
     render() {
+        console.log(this.state.projectList);
         const leftArrow = (
             <div className="arrow__wrapper">
                 <p className="arrow__text">&lt;</p>
@@ -117,13 +125,31 @@ export default class ProjectList extends React.Component {
         
         return (
             <div id="projects-content" className="projects-section">
-                <div className="projects-content__featured">
-                    {this.state.featuredProject}
-                </div>
-                <div className="projects-content__heap">
-                    <div className="projects-content__heap__title-wrapper">
-                        <h2 className="projects-content__heap__title">PROJECT HEAP</h2>
+                { this.props.isMobile == false &&
+                    <div className="projects-content__featured">
+                        {this.state.featuredProject}
                     </div>
+                }
+            
+                <div className="projects-content__heap__title-wrapper">
+                        <h2 className="projects-content__heap__title">PROJECT HEAP</h2>
+                </div>
+                <a className="projects-content__mobile-search-button" onClick={()=> this.setState({searchOpen: true})}>VIEW PROJECTS</a>
+                { this.state.searchOpen &&
+                    <ProjectSearch
+                    handleCloseSearchMenu={this.handleCloseSearchMenu}
+                    handleSearch={this.handleSearch}
+                    value={this.state.value}
+                    projectList={this.state.projectList}
+                    />
+                }
+                { this.props.isMobile &&
+                    <div className="projects-content__featured">
+                        {this.state.featuredProject}
+                    </div>
+                }
+                
+                <div className="projects-content__heap">
                     <form className="projects-content__heap__search-form">
                         <input
                             id="search-bar"
@@ -140,23 +166,11 @@ export default class ProjectList extends React.Component {
                             </div>
                         : 
                         <div className="carousel__wrapper">
-                            <div className="carousel__mobile"> 
-                                <Carousel
-                                    plugins={[
-                                        'infinite'
-                                    ]}
-                                    slides={this.state.projectList}
-                                    slidesPerScroll="1"
-                                    slidesPerPage="1"
-                                    addArrowClickHandler
-                                    
-                                />
-                            </div>
                             <div className="carousel"> 
                                 <Carousel
                                     slides={this.state.projectList}
-                                    slidesPerScroll="3"
-                                    slidesPerPage="3"
+                                    slidesPerScroll="2"
+                                    slidesPerPage="2"
                                     arrowLeft={leftArrow}
                                     arrowLeftDisabled={leftArrowDisabled}
                                     arrowRight={rightArrow}

@@ -2,40 +2,40 @@
     "projects": [
         {
             "id":"1",
-            "title":"Esports Portfolio Site",
+            "title":"Esports Portfolio",
             "githublink":"",
             "techstack":["React", "HTML", "CSS"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/esports-portfolio.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/esports-portfolio.png",
             "description":"A personal portfolio site created for a prominent Esports professional, developed using HTML/CSS and pure JavaScript. With a heavy focus on design and UX; resulting in a more unique and memorable experience.",
             "descriptionTwo":"The client requested the design to minimalistic with edited pre-existing high quality media content adding visual flare to the site.", 
-            "featured":"false"
+            "featured":"true"
         },
         {
             "id":"2",
-            "title":"Personal Portfolio Site",
+            "title":"Personal Portfolio",
             "githublink":"https://github.com/joshleedev/PortfolioSite",
             "techstack":["React", "HTML", "CSS"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/portfolio-site.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/portfolio-site.png",
             "description":"The site you are currently visiting - a place I can show off creative projects, blog interesting ideas or share relevant topics and handy guides i’ve found along the way.",
             "descriptionTwo":"Developed using HTML/CSS and React, this project provided useful insight into new development practices, and the potential benefits of using these technologies when handling topics such as dynamically displaying content.",
             "featured":"false"
         },
         {
             "id":"3",
-            "title":"LEGO Rubik's Cube Solver",
+            "title":"LEGO Cube Solver",
             "githublink":"https://github.com/joshleedev/3YP-RubikCubeSolver",
             "techstack":["MATLAB"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/cube-solver.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/cube-solver.png",
             "description":"A project which tied together multiple areas which are of personal interest, using robotics for automation and mathematical or logical puzzles. As a child I was always intrigued by puzzles such as sudoku’s, the rules around them and the implications they can have when taken further - quickly indulging when given the opportunity to develop this project as my dissertation piece at university.",
             "descriptionTwo":"Other notable parts of development were in regards to image categorisation in the form of colour recognition and detection.",
-            "featured":"true"
+            "featured":"false"
         },
         {
             "id":"4",
             "title":"VoIP System",
             "githublink":"https://github.com/joshleedev/VoIP-System",
             "techstack":["Java"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/voip.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/voip.png",
             "description":"VoIP systems are something I’ve personally used and taken for granted for a long time. This project provided hands on experience with the intricacies involved with both sending and receiving voice across the internet.",
             "descriptionTwo":"Being given a variety of sockets, each one had to be analysed to identify any unwanted communication conditions, then researching and implementing solutions to provide a more functional system.",
             "featured":"false"
@@ -45,7 +45,7 @@
             "title":"Augmented Reality App",
             "githublink":"https://github.com/joshleedev/SE2-AugmentedRealityApp",
             "techstack":["Java", "HTML", "CSS"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/ar-app.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/ar-app.png",
             "description":"Each year the University of East Anglia holds on Open Day, allowing non-students in to explore the campus and its facilities. We were tasked with producing applications that may be useful for these visitors.",
             "descriptionTwo":"An Augmented Reality application seemed like a stretch given the timeframe - but after some research and crafty workarounds it was achievable - allowing visitors to retrieve information about spots around campus on the go!",
             "featured":"false"
@@ -55,7 +55,7 @@
             "title":"Room Finder App",
             "githublink":"https://github.com/joshleedev/SE2-RoomFinderApp",
             "techstack":["Java", "HTML", "CSS"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/room-finder.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/room-finder.png",
             "description":"Each year the University of East Anglia holds on Open Day, allowing non-students in to explore the campus and its facilities. We were tasked with producing applications that may be useful for these visitors.",
             "descriptionTwo":"Exploring a new campus can be daunting, especially with UEA's many walkways -  the Room finder application ensures users can find their way around campus, incase they're seperated from their guide or simply want to focus on the areas that interest them.",
             "featured":"false"
@@ -65,7 +65,7 @@
             "title":"Car Finder App",
             "githublink":"https://github.com/joshleedev/SE2-CarLocationApp",
             "techstack":["Java", "HTML", "CSS"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/car-finder.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/car-finder.png",
             "description":"Each year the University of East Anglia holds on Open Day, allowing non-students in to explore the campus and its facilities. We were tasked with producing applications that may be useful for these visitors.",
             "descriptionTwo":"After spending the entire day walking around a new cammpus, the last thing you want it to walk around it again, trying to remember where you parked. Thanks to this app, remembering where you parked is a problem of the past.",
             "featured":"false"
@@ -75,7 +75,7 @@
             "title":"Image Categorisation",
             "githublink":"https://github.com/joshleecodes/Image-categorisation",
             "techstack":["MATLAB"],
-            "image": "https://s3.eu-west-2.amazonaws.com/joshlee.codes/images/Project+Test/image-categorisation-alt.png",
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/image-categorisation-alt.png",
             "description":"During the Computer Vision module I undertook at university, I was tasked with implementing Image Categorisation algorithms with mutatable parameters.",
             "descriptionTwo":"Comparing different algorithms and testing parameters to achieve the highest accuracy of true positives possible.",
             "featured":"false"
