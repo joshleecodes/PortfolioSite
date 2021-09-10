@@ -1,19 +1,15 @@
 
-
-
-@media (min-width: 1920px) {
-
     .cv-section {
         width: 100%;
         height: fit-content;
         flex-direction: column;
+        padding: 15vh 0;
     }
     
     .cv__title__wrapper {
         display: flex;
         flex-direction: row;
-        text-align: center;
-        padding-bottom: $l-size;
+        justify-content: center;
     }
     
     .cv__title-highlight {
@@ -26,10 +22,16 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        padding: 5vh 0;
     }
     
     .cv-open {
         z-index: 2;
     }
 
-}
+
+    @media (min-width: 800px) {
+        .cv-section {
+            padding: 5vh 0;
+        }
+    }

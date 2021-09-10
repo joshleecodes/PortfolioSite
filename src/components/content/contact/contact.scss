@@ -2,22 +2,34 @@
     background-color: $off-white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 10vh;
-    height: 75vh;
+    height: 85vh;
     width: 100%;
-    justify-content: space-evenly;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    width: 35vw;
+    width: 40vw;
+    align-items: center;
+}
+
+.contact-form__personal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 .contact-title__wrapper {
     display: flex;
+    padding-bottom: 4vh;
+}
+
+.contact-text {
+    padding: 0 15vw;
+    text-align: center;
 }
 
 .contact-title__highlight {
@@ -26,21 +38,8 @@
 }
 
 .contact__title {
-    margin-bottom: 0;
+    padding-bottom: 2vh;
     text-align: center;
-}
-
-.contact-social__wrapper {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 5vh;
-    height: 20vh;
-    width: 100%;
-}
-
-.contact-social {
-    width: 15vw;
-    padding: 0 $xs-size;
 }
 
 .contact-form__containter {
@@ -78,14 +77,51 @@ input:focus, textarea:focus {
     height: 10rem;
 }
 
-@media (min-width: 1920px) {
+.contact-button__mobile {
+    display: flex;
+    padding: 1vh 2vw;
+    color: #F5A623;
+    background-color: $off-white;
+    font-weight: bold;
+    border: 1px solid #F5A623;
+    margin-top: 3vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-self: center;
+    text-decoration: none;
+}
+
+@media (min-width: 800px) {
+    .contact-text{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .contact-section {
+        padding: 15vh 0 15vh 0;
+        height: 60vh;
+    }
+
+    .contact__title__wrapper{
+        padding-bottom: 3vh;
+    }
 
     .contact-form__containter {
         display: flex;
     }
+    
+    .contact-button__mobile{
+        background-color: $yellow;
+        color: $off-white;
+        font-weight: lighter;
+        letter-spacing: .25rem;
+        
+    }
 
-    .contact-social__wrapper {
-        display: none;
+    .contact-button__mobile:hover{
+        background-color: $off-white;
+        color: $yellow;
     }
     
     .contact-form {
@@ -107,7 +143,11 @@ input:focus, textarea:focus {
 
     .contact-form__message {
         resize: none;
-        height: 10rem;
+        height: 20vh;
+    }
+
+    .contact-form__personal-info__name, .contact-form__personal-info__email, .contact-form__message {
+        padding: 2.5%;
     }
 
     .contact-form__submit {
@@ -120,7 +160,7 @@ input:focus, textarea:focus {
         font-size: $m-size;
         width: 50%;
         padding: $s-size;
-        margin: $s-size;
+        margin-top: 0.75vh;
         transition: all 0.2s ease-in-out;
     }
 
@@ -128,7 +168,7 @@ input:focus, textarea:focus {
         color: none;
         background: $yellow;
         border: 1px solid $yellow;
-        width: 100%;
+        width: 92.5%;
     }
 
     .feedback__message {

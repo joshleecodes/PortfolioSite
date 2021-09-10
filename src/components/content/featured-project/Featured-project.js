@@ -14,11 +14,11 @@ export default class FeaturedProject extends React.Component {
                 </div>
                 <div className="featured-projects__wrapper">
                     <img className="featured-project__image" src={this.props.image}/>
-                    <div className="featured-project__body-wrapper">
+                    <div className="feature-project__description-wrapper">
                         <div className="featured-project__header-wrapper">
                             <div className="featured-project__header-title-wrapper">
                                 <h3 className="featured-project__body-title">{this.props.title}</h3>
-                                <a href={this.props.githubLink} target="_blank">
+                                <a className="featured-github-icon__wrapper" href={this.props.githubLink} target="_blank">
                                     <img
                                         className="github-icon"
                                         id="featured-github-icon"
@@ -30,9 +30,11 @@ export default class FeaturedProject extends React.Component {
                             </div>
                             <h4 className="featured-project__techstack">{this.props.techStack}</h4>
                         </div>
-                        <div className="featured-project__body-text-wrapper">
-                            <p className="featured-project__body-text-one">{this.props.description}</p>
-                            <p className="featured-project__body-text-two">{this.props.descriptionTwo}</p>
+                        <div className="featured-project__body-wrapper">
+                            <div className="featured-project__body-text-wrapper">
+                                <p className="featured-project__body-text-one">{this.props.description}</p>
+                                <p className="featured-project__body-text-two">{this.props.descriptionTwo}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

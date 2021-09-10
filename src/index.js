@@ -17,8 +17,8 @@ import Contact from './components/content/contact/Contact';
 import Footer from './components/layout/footer/Footer';
 
 //Icon imports
-import SiteIcon from './assets/imgs/site-logo.png';
-import SiteHoverIcon from './assets/imgs/site-logo-inverted.png';
+import SiteIcon from './assets/imgs/SVG/site-logo.svg';
+import SiteHoverIcon from './assets/imgs/SVG/site-logo-active.svg';
 
 //SVG Imports
 import Github from './assets/imgs/SVG/social-icons/github/github.svg';
@@ -30,18 +30,21 @@ import Email from './assets/imgs/SVG/social-icons/email/email.svg';
 import EmailActive from './assets/imgs/SVG/social-icons/email/email-active.svg';
 import ReturnTop from './assets/imgs/SVG/arrow-icons/returnTop.svg';
 import ReturnTopActive from './assets/imgs/SVG/arrow-icons/returnTop-active.svg'
-import { init } from 'emailjs-com';
 
 
-AOS.init();
+
+AOS.init({
+    mirror: true
+});
 
 let isMobile = false;
+let isTablet = false;
 let initialOffSet;
 
 const handleResize = () => {
     isMobile = window.innerWidth <= 768;
+    isTablet = window.innerWidth <= 1200;
     initialOffSet = window.innerHeight;
-    console.log(initialOffSet);
 }
 
 window.onresize = handleResize();
@@ -52,8 +55,8 @@ let handleIconHover = (e) => {
     if(icon == "github-icon") {
         e.currentTarget.src = GithubActive;
     }
-    else if(icon == "linkedin-icon") {
-        e.currentTarget.src = LinkedinActive;
+    else if(icon == "linkedin__wrapper") {
+        e.currentTarget.getElementsByTagName('object')[0].data = LinkedinActive;
     }
     else if(icon == "email-icon") {
         e.currentTarget.src = EmailActive;
@@ -61,11 +64,11 @@ let handleIconHover = (e) => {
     else if(icon == "return-top") {
         e.currentTarget.src = ReturnTopActive;
     }
-    else if (icon == "nav-landing") {
+    else if (icon == "nav-landing") { 
         e.currentTarget.src = SiteHoverIcon;
     }
     else if (icon == "featured-github-icon") {
-        e.currentTarget.src = GithubActive;
+        e.currentTarget.src = GithubAlt;
     }
     else if (icon == "modal-github-icon") {
         e.currentTarget.src = GithubAlt;
@@ -78,8 +81,8 @@ let handleIconHoverOff = (e) => {
     if(icon == "github-icon") {
         e.currentTarget.src = Github;
     }
-    else if(icon == "linkedin-icon") {
-        e.currentTarget.src = Linkedin;
+    else if(icon == "linkedin__wrapper") {
+        e.currentTarget.getElementsByTagName('object')[0].data = Linkedin;
     }
     else if(icon == "email-icon") {
         e.currentTarget.src = Email;
@@ -99,20 +102,20 @@ let handleIconHoverOff = (e) => {
 }
 
 let headerOffSet;
+let setHeaderOffSet = () => {
+    headerOffSet = document.getElementById("header").offsetTop;
+}
 
-let setHeaderOffSet = (value) => {
-    headerOffSet = value;
+let header;
+let setHeader = () => {
+    header = document.getElementById("header");
 }
 
 let handleStickyHeader = (initialOffSet) => {
-    let header = document.getElementById("header");
-    let body = document.getElementById("body-content");
     if(window.pageYOffset >= initialOffSet) {
         header.classList.add("sticky");
-        body.classList.add('sticky-body');
     } else {
         header.classList.remove("sticky");
-        body.classList.remove('sticky-body');
     }
 }
 
@@ -126,16 +129,17 @@ if(isMobile == false){
 const routes = (
     <BrowserRouter>
         <div>
-            { isMobile &&
-                <MobileMenu/> 
-            }     
             <Landing/>
-            { isMobile == false &&
+            { isMobile 
+            ?
+                <MobileMenu/>
+            :
                 <Header
                     handleIconHover={handleIconHover} 
                     handleIconHoverOff={handleIconHoverOff}
                     setHeaderOffSet={setHeaderOffSet}
-                    isMobile={isMobile}
+                    setHeader={setHeader}
+                    
                 />
             }
             <Switch>
@@ -150,9 +154,9 @@ const routes = (
                         render={
                             (props) => 
                                 <ProjectList
-                                handleIconHover={handleIconHover} 
-                                handleIconHoverOff={handleIconHoverOff}
-                                isMobile={isMobile}
+                                    handleIconHover={handleIconHover} 
+                                    handleIconHoverOff={handleIconHoverOff}
+                                    isTablet={isTablet}
                                 />
                         }
                         exact={true}
@@ -162,7 +166,9 @@ const routes = (
                             path="/" 
                             render={
                                 (props) => 
-                                    <Cv/>
+                                    <Cv
+                                        isTablet={isTablet}
+                                    />
                             }
                             exact={true}
                         />
@@ -172,8 +178,8 @@ const routes = (
                     render={
                         (props) => 
                             <Contact 
-                            handleIconHover={handleIconHover} 
-                            handleIconHoverOff={handleIconHoverOff}
+                                handleIconHover={handleIconHover} 
+                                handleIconHoverOff={handleIconHoverOff}
                             />
                     } 
                     exact={true}
@@ -183,8 +189,8 @@ const routes = (
                     render={
                         (props) => 
                             <Footer 
-                            handleIconHover={handleIconHover} 
-                            handleIconHoverOff={handleIconHoverOff}
+                                handleIconHover={handleIconHover} 
+                                handleIconHoverOff={handleIconHoverOff}
                             />
                     } 
                     exact={true}

@@ -8,17 +8,18 @@
     justify-content: center;
 }
 
-@media (min-width: 1920px) { 
+@media (min-width: 800px) { 
     .header {
         display: flex;
+        justify-content: center;
         background-color: white;
         background-clip: padding-box;
-        padding: 0 5vw;
         font-family: $title-font;
         z-index: 2;
-        width: 90vw;
+        width: 95%;
         height: 10vh;
         border-bottom: 1px solid $off-white;
+        padding: 0 2.5%;
     }
     
     .header__border {
@@ -71,13 +72,13 @@
     .header__content-section__site-link:hover {
         color: $yellow;
     }
-    
+
     .site-link-active {
         color: white;
         background-color: $yellow;
         border: 1px solid $yellow;
     }
-    
+
     .site-link-active:hover {
         color:$yellow;
         background-color: white;
@@ -97,9 +98,5 @@
         width: 4.3rem;
         padding: 0 $xs-size;
     } 
-    
-    .social-link-icon {
-        transition: all 0.2s ease-in-out;
-    }
 
 }

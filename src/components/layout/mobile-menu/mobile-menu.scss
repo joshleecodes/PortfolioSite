@@ -88,9 +88,14 @@
     justify-content: center;
     height: 10vh;
     width: 100%;
+    padding-top: 2.5vh;
 }
 
 .mobile-social {
     width: 10vw;
     padding: 0 1vw;
+}
+
+.mobile-git__wrapper, .mobile-linkedin__wrapper{
+    z-index: 0;
 }

@@ -15,6 +15,15 @@ body {
     margin: 0;
 }
 
+.modal-open {
+    overflow: hidden;
+    margin-left: -0.5vw;
+}
+
+svg {
+    font-family: $svg-font;
+}
+
 .content {
     z-index: -1;
 }
@@ -32,23 +41,25 @@ input:focus::placeholder {
 }
 
 h2 {
-    font-size: $title;
+    font-size: $mobile-title;
     letter-spacing: $xs-size;
 }
 
+object{
+    pointer-events: none;
+}
 
-//break points - width
-//landscape mobile
-@media (min-width: 576px) {}
-// tablet
-@media (min-width: 768px) {}
-// laptop
-@media (min-width: 1200px) {}
-// PC
-@media (min-width: 1920px) {
+//large tablets
+@media (min-width:800px) {
     h2 {
-        font-size: $l-size;
+        font-size: 3rem;
     }
 }
-// high res
-@media (min-width: 2160) {}
+
+// PC
+@media (min-width: 1280px) {
+    h2 {
+        font-size: $title;
+    }
+}
+    

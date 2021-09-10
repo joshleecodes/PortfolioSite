@@ -69,7 +69,7 @@ export default class MobileMenu extends React.Component {
 
     render(){
         return(
-            <div className="mobile-menu__wrapper" id="mobile-menu" data-aos="fade" data-aos-duraction="1200" data-aos-delay="1000"> 
+            <div className="mobile-menu__wrapper" id="mobile-menu" data-aos="fade" data-aos-duraction="1200" data-aos-anchor-placement="#landing-content"> 
                 <a className="menu-open" onClick={this.handleOpenMenu}>
                     <img
                         className="menu-icon"
@@ -83,7 +83,7 @@ export default class MobileMenu extends React.Component {
                     />
                 </a>
                 {this.state.menuOpen &&
-                    <div className="menu-list__wrapper">
+                    <div className="menu-list__wrapper" data-aos="flip-right" data-aos-duraction="200" data-aos-mirror="true">
                         <div className="menu-list">
                             <NavLink className="" to="#landing-content" onClick={this.handleCloseMenu}><img className="menu__site-icon" id="menu-landing" src={SiteLogo} /></NavLink>
                             <div className="menu-option">
@@ -99,11 +99,14 @@ export default class MobileMenu extends React.Component {
                                 <NavLink className="menu-link open-cv" id="menu-cv" to={CV} target="_blank" onClick={this.handleCloseMenu}>OPEN CV</NavLink>
                             </div>
                             <div className="mobile-social__wrapper">
-                                <a className="mobile-git__wrapper" href="github.com/joshleecodes">
+                                <a className="mobile-git__wrapper" href="https://github.com/joshleecodes" target="_blank">
                                     <img className="mobile-social" src={GithubIcon}/>
                                 </a>
-                                <a className="mobile-linkedin__wrapper" href="se.linkedin.com/in/joshua-lee-2830746b">
-                                    <img className="mobile-social" src={LinkedInIcon}/>
+                                <a className="mobile-linkedin__wrapper" href="https://www.linkedin.com/in/joshleedev/" target="_blank">
+                                    <object
+                                        className="mobile-social" 
+                                        data={LinkedInIcon}
+                                    />
                                 </a>
                                 <a className="mobile-email__wrapper" href="mailto: joshlee.dev@gmail.com">
                                     <img className="mobile-social" src={EmailIcon}/>

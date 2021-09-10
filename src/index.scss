@@ -15,9 +15,8 @@
 @import './components/content/contact/contact';
 
 .sticky {
-    position: fixed;
+    position: sticky;
     top: 0;
-    width: 90vw;
 }
 
 .sticky-body {

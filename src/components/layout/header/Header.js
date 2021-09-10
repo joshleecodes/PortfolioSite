@@ -3,12 +3,10 @@ import { HashLink as NavLink } from 'react-router-hash-link';
 import { scrollToTop, scrollTo } from './../../../util/scrollHelper';
 
 //Icon Imports
-import SiteLogo from './../../../assets/imgs/site-logo.png';
+import SiteLogo from './../../../assets/imgs//SVG/site-logo.svg';
 import GithubIcon from './../../../assets/imgs/SVG/social-icons/github/github.svg';
 import LinkedInIcon from './../../../assets/imgs/SVG/social-icons/linkedin/linkedin.svg';
 import EmailIcon from './../../../assets/imgs/SVG/social-icons/email/email.svg';
-import MenuIcon from './../../../assets/imgs/SVG/menu-icons/menu.svg';
-import ExitMenuIcon from './../../../assets/imgs/SVG/menu-icons/cross.svg';
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -21,11 +19,12 @@ export default class Header extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleActiveSection);
-        return this.props.setHeaderOffSet(document.getElementById("header").offsetTop);
+        this.props.setHeaderOffSet();
+        this.props.setHeader();
     }
 
     handleActiveSection() {
-        if(this.props.isMobile) {return;}
+        
        let offset = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
        let currentSection = this.state.currentSection;
        let currentSectionClassList = document.getElementById(this.state.currentSection).classList;
@@ -59,7 +58,7 @@ export default class Header extends React.Component {
 
     render() {
         return (
-            <div id="header" className="header">
+            <div id="header" className="header" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="800" data-aos-delay="800" data-aos-once="true" data-aos-anchor-placement="top-bottom">
                 <div className="header__container">
                     <NavLink to="#landing-content" onClick={scrollToTop}>
                         <img 
@@ -79,28 +78,26 @@ export default class Header extends React.Component {
                             <NavLink className="header__content-section__site-link" id="#nav-contact" to="#footer-content"  onClick={scrollTo}>CONTACT</NavLink>
                         </div>
                         <div className="header__content-section__social-link-wrapper">
-                            <a href="https://github.com/joshleedev" target="_blank">
+                            <a href="https://github.com/joshleecodes" target="_blank">
                                 <img
                                     id="github-icon" 
                                     className="social-link-icon header__content-section__social-link"  
-                                    onMouseOver={this.props.handleIconHover} 
-                                    onMouseLeave={this.props.handleIconHoverOff} 
                                     src={GithubIcon}
                                     alt="github"
+                                    onMouseOver={this.props.handleIconHover}
+                                    onMouseLeave={this.props.handleIconHoverOff}
                                 />
                             </a>
-                            <a href="https://www.linkedin.com/in/joshleedev/" target="_blank">
-                                <img 
-                                    id="linkedin-icon" 
-                                    className="social-link-icon"
-                                    onMouseOver={this.props.handleIconHover} 
-                                    onMouseLeave={this.props.handleIconHoverOff} 
-                                    src={LinkedInIcon} 
+                            <a id="linkedin__wrapper" href="https://www.linkedin.com/in/joshleedev/" target="_blank" onMouseOver={this.props.handleIconHover} onMouseLeave={this.props.handleIconHoverOff}>
+                                <object
+                                    type="image/svg+xml"
+                                    className="social-link-icon" 
+                                    data={LinkedInIcon} 
                                     alt="linkedIn"
                                 />
                             </a>
                             <a href="mailto: joshlee.dev@gmail.com">
-                                <img 
+                                <img
                                     id="email-icon" 
                                     className="social-link-icon"
                                     onMouseOver={this.props.handleIconHover} 
