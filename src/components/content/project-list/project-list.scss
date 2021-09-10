@@ -285,10 +285,9 @@
     }
 
     .modal-body-wrapper__desktop{
-        overflow-wrap: break-word;
         background-color: $light-gray;
         color: #4A4A4A;
-        padding: 1vh 5vw;
+        padding: 1vh $xl-size;
     }
 
     .github-wrapper__desktop {

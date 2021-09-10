@@ -19,8 +19,8 @@
             "projectlink":"https://joshlee.codes/",
             "techstack":["React", "HTML", "CSS"],
             "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/portfolio-site.png",
-            "description":"The site you are currently visiting - a place I can show off creative projects and display an understanding of different technologies. Future development will include a blog where I can share interesting ideas, relevant topics and handy guides I’ve found along the way.",
-            "descriptionTwo":"Developed using HTML/CSS and React, this project provided useful insight into new development practices, and the potential benefits of using these technologies in a practical real-life use case.",
+            "description":"The site you are currently visiting - a place I can show off creative projects and display an understanding of different technologies. Future development will include a blog where I can share interesting ideas, relevant topics and handy guides I’ve found along the way.",
+            "descriptionTwo":"Developed using HTML/CSS and React, this project provided useful insight into new development practices, and the potential benefits of using these technologies in a practical real-life use case.",
             "searchTerms": ["portfolio","react", "web", "html", "css", "ux", "aws"],
             "featured":"false"
         },
