@@ -1,27 +1,135 @@
 .project-wrapper {
-    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: row;
     color: white;
+    height: 12vh;
+    width: 100%;
+    border-bottom: 1px solid $dark-gray;
 }   
 
 .project__img {
-    width: 36rem;
-    height: 22rem;
+    height: inherit;
+    width: 30vw;
+    flex-grow: 0;
     object-fit: cover;
+}
+
+.project-title__wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: inherit;
+}
+
+.project-title__mobile {
+    display: flex;
+    flex-direction: column;
+    font-size: $m-size;
+    background-color: $dark-gray;
+    color: $off-white;
+    flex-grow: 1;
+    justify-content: flex-end;
+    text-transform: uppercase;
+}
+
+.project-tech__mobile {
+    flex-grow: 0;
+    background-color: $yellow;
+    color: white;
+    font-size: $s-size;
+    padding: 0.5vh 0;
+}
+
+.project-title__mobile, .project-tech__mobile{
+    margin: 0;
+    padding-left: 2vw;
+}
+
+.close-project__mobile{
+    display: none;
+    position: absolute;
+    top:12vh;
+    right:40vw;
+    padding: 1vh 3vw;
+    color: #F5A623;
+    background-color: $off-white;
+    font-weight: bold;
+    border: 1px solid #F5A623;
+    margin-bottom: 1vh;
+    width: max-content;
+    align-self: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    height: 81vh;
+    background-color: $light-gray;
+    z-index: 3;
+    overflow: scroll;
+    position: absolute;
+    top:19.3vh;
+}
+.modal-img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.modal-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: $dark-gray;
+    align-self: center;
+}
+
+.modal-info__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    background-color: $dark-gray;
+    margin: 0;
+    width: 100%;
+    padding: 1vh 15vw;
+}
+
+.modal-stack {
+    margin: 0;
+    background-color: $yellow;
+    justify-self: flex-end;
+    padding: 0.5vh 5vw;
+    height: 3vh;
+}
+
+.modal-body-wrapper {
+    color: $dark-gray;
+    padding: 1vh 15vw;
+    overflow-wrap: break-word;
+}
+
+.modal-github-icon {
+    height: 6vh;
+    align-self: center;
 }
 
 .project-overlay {
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background: $dark-gray;
     opacity: 0%;
-    width: 100%;
+    width: 98%;
     height: 100%;
     transition: opacity 0.5s;
 }
@@ -33,24 +141,24 @@
 
 .project-title {
     position: relative;
-    top: 10%;
     padding-bottom: 0;
+    margin: 0;
 }
 
-.project-tech {
-    position: relative;
+.project-tech{
+    margin-top: 0;
 }
 
 .project-view {
-    position: relative;
     top: 15%;
-    width: 30%;
     background: $yellow;
     border: none;
-    color: $dark-gray;
-    padding: $xs-size;
+    color: white;
+    padding: $xs-size $s-size;
     border: 1px solid $yellow;
     opacity: inherit;
+    letter-spacing: 0.15rem;
+    font-family: "Raleway", sans-serif;
 }
 
 .project-view:hover {
@@ -59,104 +167,76 @@
     border: 1px solid $yellow;
 }
 
-//Modal Styling
+@media (min-width: 600px) {
+    .close-project__mobile{
+        right: 44vw;
+    }
 
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    width: 60rem;
+    .modal-img {
+        height: 40vh;
+    }
+
+    .modal-title-wrapper{
+        align-items: center;
+    }
+
+    .modal-title{
+        font-size: 2rem;
+    }
+
+    .modal-stack{
+        line-height: 3vh;
+    }
+
+    .modal-body-wrapper{
+        padding: 3vh 15vw;
+    }
 }
 
-.modal-img-wrapper {
-    position: relative;
-    width: inherit;
-    height: 35rem;
-    object-fit: cover;
+@media (min-width: 800px){
+    .project-title__mobile{
+        font-size: 2.2rem;
+    }
+
+    .project-tech__mobile{
+        height: 2vh;
+        line-height: 2vh;
+        font-size: 1.8rem;
+    }
+
+    .modal-title{
+        font-size: 2.5rem;
+    }
+
+    .modal-stack{
+        font-size: 2rem;
+    }
+
+    .modal-body-wrapper{
+        font-size: 2rem;
+    }
 }
 
-.modal-img {
-    width: inherit;
-    height: inherit;
-    object-fit: cover;
-}
 
-.modal-img-buttons {
-    position: absolute;
-    top: 45%;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
+@media (min-width: 1280px) {
 
-.modal-img-buttons img {
-    width: $l-size;
-}
+    .project-title__wrapper{
+        display: none;
+    }
 
-.modal-wrapper {
-    padding: 0;
-}
+    .project__img {
+        width: 25vw;
+        height: 30vh;
+        object-fit: cover;
+    }
 
-.modal-title-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-    width: inherit;
-    height: auto;
-    align-items: baseline;
-    background-color: $yellow;
-}
+    .project-overlay {
+        display: flex;
+        width: 25vw;
+    }
 
-.modal-title {
-    font-size: $m-size;
-    margin: 0;
-    color: white;
-    background-color: $dark-gray;
-    padding: $xs-size $m-size $xs-size $xl-size;
-    min-width: 52%;
-    letter-spacing: $xs-size;
-}
+    .project-wrapper {
+        height: 30vh;
+    }
 
-.modal-stack {
-    margin: 0;
-    color: $dark-gray;
-    padding: $xs-size $xl-size $xs-size $m-size;
-    letter-spacing: $xs-size;
-    font-size: $s-size;
-}
-
-.modal-body-wrapper {
-    padding: $m-size $xl-size;
-    background-color: $light-gray;
-}
-
-.github-wrapper {
-    display: flex;
-    flex-direction: row;
-    padding: 0 $m-size $m-size $xl-size;
-    background-color: $light-gray;
-}
-
-.github-wrapper a {
-    text-decoration: none;
-    outline: none;
-    color: $dark-gray;
-}
-
-.modal-github-icon {
-    width: $l-size;
-    align-self: center;
-    padding-right: $s-size;
-}
-
-.modal-github-link {
-    font-size: $m-size;
-}
-
-#test {
-    background: $yellow;
-    position: absolute;
-    top: 0;
-    right: 0;
-    outline: none;
 }

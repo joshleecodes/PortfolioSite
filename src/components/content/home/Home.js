@@ -1,8 +1,7 @@
 import React from 'react';
-import Carousel from '@brainhubeu/react-carousel';
 
 import ProjectData from './../../../assets/json/projects.json';
-import CodingIcon from '../../../assets/imgs/coding-icon-display.png';
+import CodingIcon from '../../../assets/imgs/coding-icon.svg'
 
 import ReactText from '../../../assets/imgs/react.png';
 import NodeText from '../../../assets/imgs/node-js.png';
@@ -44,12 +43,12 @@ export default class Home extends React.Component {
     render(){
         return (
             <div id="home-content" className="home-section">
-                <div className="home-content__text-block" data-aos="fade-right" data-aos-duration="1500" data-aos-anchor="#projects-content" data-aos-once="true">
+                <div className="home-content__text-block" data-aos="fade-right" data-aos-duration="1500" data-aos-anchor-placement="#home-content" data-aos-once="true">
                     <div className="home-content__text-block__title__wrapper">
                         <h2 className="home-content__text-block__title">ABOUT ME</h2>
                     </div>
                     <p className="home-content__text-block__body">
-                    I’m Josh, a creative junior developer based in London, aspiring to establish myself as a fully fledged full stack developer. 
+                    I’m Josh, a creative junior developer based in London, aspiring to establish myself as a fully-fledged full stack developer. 
                     </p>
                     <p className="home-content__text-block__body"> 
                     Passionate about creating responsive applications, blending functionality with an intuitive UX/UI experience.
@@ -58,15 +57,9 @@ export default class Home extends React.Component {
                     I am seeking exposure to modern web technologies, with a tech stack centred around React and NodeJS.
                     </p>
                 </div>
-                <div className="home-content__image-wrapper" data-aos="fade-left" data-aos-duration="1500" data-aos-anchor-placement="top-botto m" data-aos-once="true">
+                <img className="home-content__image-mobile" src={CodingIcon}/>
+                <div className="home-content__image-wrapper" data-aos="fade-left" data-aos-duration="1500" data-aos-anchor-placement="#home-content" data-aos-once="true">
                     <img className="home-content__image" src={CodingIcon} alt="coding-logo"/>
-                    <div className="carousel__wrapper-skills">
-                        <Carousel
-                            slides={this.state.skillImages}
-                            infinite="true"
-                            autoPlay="2500"
-                        />
-                    </div>
                 </div>
             </div>
         )

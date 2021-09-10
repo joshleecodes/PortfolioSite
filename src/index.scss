@@ -2,22 +2,30 @@
 @import './components/layout/settings';
 @import './components/layout/base';
 @import './components/layout/header/header';
+@import './components//layout/mobile-menu/mobile-menu';
 @import './components/layout/footer/footer';
 @import './components/content/landing/landing';
 @import './components/content/home/home';
 @import './components/content/blog/blog';
 @import './components/content/project-list/project-list';
 @import './components/content/project-item/project-item';
+@import './components/content//project-search/project-search';
 @import './components/content/featured-project/featured-project';
 @import './components/content/cv/cv';
 @import './components/content/contact/contact';
 
 .sticky {
-    position: fixed;
+    position: sticky;
     top: 0;
-    width: 95%;
 }
 
 .sticky-body {
-    padding-top: 65px;
+    padding-top: 10vh;
+}
+
+[data-aos] {
+    pointer-events: none;
+    &.aos-animate {
+      pointer-events: auto;
+    }
 }

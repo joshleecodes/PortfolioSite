@@ -7,6 +7,7 @@ import './index.scss';
 
 //Component Imports
 import NotFound from './components/content/not-found/Not-found';
+import MobileMenu from './components/layout/mobile-menu/Mobile-menu';
 import Header from './components/layout/header/Header';
 import Landing from './components/content/landing/Landing';
 import Home from './components/content/home/Home';
@@ -16,9 +17,8 @@ import Contact from './components/content/contact/Contact';
 import Footer from './components/layout/footer/Footer';
 
 //Icon imports
-import SiteIcon from './assets/imgs/site-logo.png';
-import SiteHoverIcon from './assets/imgs/site-logo-inverted.png';
-
+import SiteIcon from './assets/imgs/SVG/site-logo.svg';
+import SiteHoverIcon from './assets/imgs/SVG/site-logo-active.svg';
 
 //SVG Imports
 import Github from './assets/imgs/SVG/social-icons/github/github.svg';
@@ -28,11 +28,26 @@ import Linkedin from './assets/imgs/SVG/social-icons/linkedin/linkedin.svg';
 import LinkedinActive from './assets/imgs/SVG/social-icons/linkedin/linkedin-active.svg';
 import Email from './assets/imgs/SVG/social-icons/email/email.svg';
 import EmailActive from './assets/imgs/SVG/social-icons/email/email-active.svg';
-
 import ReturnTop from './assets/imgs/SVG/arrow-icons/returnTop.svg';
 import ReturnTopActive from './assets/imgs/SVG/arrow-icons/returnTop-active.svg'
 
-AOS.init();
+
+
+AOS.init({
+    mirror: true
+});
+
+let isMobile = false;
+let isTablet = false;
+let initialOffSet;
+
+const handleResize = () => {
+    isMobile = window.innerWidth <= 768;
+    isTablet = window.innerWidth <= 1200;
+    initialOffSet = window.innerHeight;
+}
+
+window.onresize = handleResize();
 
 let handleIconHover = (e) => {
     let icon = e.currentTarget.id;
@@ -40,8 +55,8 @@ let handleIconHover = (e) => {
     if(icon == "github-icon") {
         e.currentTarget.src = GithubActive;
     }
-    else if(icon == "linkedin-icon") {
-        e.currentTarget.src = LinkedinActive;
+    else if(icon == "linkedin__wrapper") {
+        e.currentTarget.getElementsByTagName('object')[0].data = LinkedinActive;
     }
     else if(icon == "email-icon") {
         e.currentTarget.src = EmailActive;
@@ -49,11 +64,11 @@ let handleIconHover = (e) => {
     else if(icon == "return-top") {
         e.currentTarget.src = ReturnTopActive;
     }
-    else if (icon == "nav-landing") {
+    else if (icon == "nav-landing") { 
         e.currentTarget.src = SiteHoverIcon;
     }
     else if (icon == "featured-github-icon") {
-        e.currentTarget.src = GithubActive;
+        e.currentTarget.src = GithubAlt;
     }
     else if (icon == "modal-github-icon") {
         e.currentTarget.src = GithubAlt;
@@ -66,8 +81,8 @@ let handleIconHoverOff = (e) => {
     if(icon == "github-icon") {
         e.currentTarget.src = Github;
     }
-    else if(icon == "linkedin-icon") {
-        e.currentTarget.src = Linkedin;
+    else if(icon == "linkedin__wrapper") {
+        e.currentTarget.getElementsByTagName('object')[0].data = Linkedin;
     }
     else if(icon == "email-icon") {
         e.currentTarget.src = Email;
@@ -87,34 +102,46 @@ let handleIconHoverOff = (e) => {
 }
 
 let headerOffSet;
-let setHeaderOffSet = (value) => {
-    headerOffSet = value;
+let setHeaderOffSet = () => {
+    headerOffSet = document.getElementById("header").offsetTop;
 }
+
+let header;
+let setHeader = () => {
+    header = document.getElementById("header");
+}
+
 let handleStickyHeader = (initialOffSet) => {
-    let header = document.getElementById("header");
-    let body = document.getElementById("body-content");
-    if(window.pageYOffset >= initialOffSet+200) {
+    if(window.pageYOffset >= initialOffSet) {
         header.classList.add("sticky");
-        body.classList.add('sticky-body');
     } else {
         header.classList.remove("sticky");
-        body.classList.remove('sticky-body');
     }
 }
 
-window.onscroll = () => {
-    handleStickyHeader(headerOffSet);
-};
+if(isMobile == false){
+    window.onscroll = () => {
+        handleStickyHeader(headerOffSet);
+    }
+}
+
 
 const routes = (
     <BrowserRouter>
         <div>
             <Landing/>
-            <Header 
-                handleIconHover={handleIconHover} 
-                handleIconHoverOff={handleIconHoverOff}
-                setHeaderOffSet={setHeaderOffSet}
-            />
+            { isMobile 
+            ?
+                <MobileMenu/>
+            :
+                <Header
+                    handleIconHover={handleIconHover} 
+                    handleIconHoverOff={handleIconHoverOff}
+                    setHeaderOffSet={setHeaderOffSet}
+                    setHeader={setHeader}
+                    
+                />
+            }
             <Switch>
                 <div id="body-content">
                     <Route
@@ -127,42 +154,48 @@ const routes = (
                         render={
                             (props) => 
                                 <ProjectList
-                                handleIconHover={handleIconHover} 
-                                handleIconHoverOff={handleIconHoverOff}
+                                    handleIconHover={handleIconHover} 
+                                    handleIconHoverOff={handleIconHoverOff}
+                                    isTablet={isTablet}
                                 />
                         }
                         exact={true}
                     />
+                    { isMobile == false &&
+                        <Route
+                            path="/" 
+                            render={
+                                (props) => 
+                                    <Cv
+                                        isTablet={isTablet}
+                                    />
+                            }
+                            exact={true}
+                        />
+                    }
                     <Route
-                        path="/" 
-                        component={Cv} 
-                        exact={true}
-                    />
-                    <Route
-                        path="/" 
-                        render={
-                            (props) => 
-                                <Contact 
+                    path="/" 
+                    render={
+                        (props) => 
+                            <Contact 
                                 handleIconHover={handleIconHover} 
                                 handleIconHoverOff={handleIconHoverOff}
-                                />
-                        } 
-                        exact={true}
+                            />
+                    } 
+                    exact={true}
                     />
                     <Route
-                        path="/" 
-                        render={
-                            (props) => 
-                                <Footer 
+                    path="/" 
+                    render={
+                        (props) => 
+                            <Footer 
                                 handleIconHover={handleIconHover} 
                                 handleIconHoverOff={handleIconHoverOff}
-                                />
-                        } 
-                        exact={true}
+                            />
+                    } 
+                    exact={true}
                     />
                 </div>
-                     
-                <Route component={NotFound}/>
             </Switch>
         </div>
     </BrowserRouter>

@@ -3,7 +3,7 @@ import { HashLink as NavLink } from 'react-router-hash-link';
 import { scrollToTop, scrollTo } from './../../../util/scrollHelper';
 
 //Icon Imports
-import SiteLogo from './../../../assets/imgs/SVG/site-logo.svg';
+import SiteLogo from './../../../assets/imgs//SVG/site-logo.svg';
 import GithubIcon from './../../../assets/imgs/SVG/social-icons/github/github.svg';
 import LinkedInIcon from './../../../assets/imgs/SVG/social-icons/linkedin/linkedin.svg';
 import EmailIcon from './../../../assets/imgs/SVG/social-icons/email/email.svg';
@@ -12,17 +12,19 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentSection: 'nav-landing'
+            currentSection: 'nav-landing',
         }
         this.handleActiveSection = this.handleActiveSection.bind(this);
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleActiveSection);
-        return this.props.setHeaderOffSet(document.getElementById("header").offsetTop);
+        this.props.setHeaderOffSet();
+        this.props.setHeader();
     }
 
     handleActiveSection() {
+        
        let offset = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
        let currentSection = this.state.currentSection;
        let currentSectionClassList = document.getElementById(this.state.currentSection).classList;
@@ -56,7 +58,7 @@ export default class Header extends React.Component {
 
     render() {
         return (
-            <div id="header" className="header" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="1200" data-aos-delay="1000" data-aos-once="true">
+            <div id="header" className="header" data-aos="fade" data-aos-easing="ease-in-sine" data-aos-duration="800" data-aos-delay="800" data-aos-once="true" data-aos-anchor-placement="top-bottom">
                 <div className="header__container">
                     <NavLink to="#landing-content" onClick={scrollToTop}>
                         <img 
@@ -65,7 +67,7 @@ export default class Header extends React.Component {
                             onClick={this.onNavLinkClick}
                             onMouseOver={this.props.handleIconHover} 
                             onMouseLeave={this.props.handleIconHoverOff}  
-                            src={SiteLogo}        
+                            src={SiteLogo}
                         />
                     </NavLink>
                     <div className="header__content-section">
@@ -75,30 +77,27 @@ export default class Header extends React.Component {
                             <NavLink className="header__content-section__site-link" id="#nav-cv" to="#cv-content"  onClick={scrollTo}>CV</NavLink>
                             <NavLink className="header__content-section__site-link" id="#nav-contact" to="#footer-content"  onClick={scrollTo}>CONTACT</NavLink>
                         </div>
-                        
                         <div className="header__content-section__social-link-wrapper">
-                            <a href="https://github.com/joshleedev" target="_blank">
+                            <a href="https://github.com/joshleecodes" target="_blank">
                                 <img
                                     id="github-icon" 
                                     className="social-link-icon header__content-section__social-link"  
-                                    onMouseOver={this.props.handleIconHover} 
-                                    onMouseLeave={this.props.handleIconHoverOff} 
-                                    src={GithubIcon} 
+                                    src={GithubIcon}
                                     alt="github"
+                                    onMouseOver={this.props.handleIconHover}
+                                    onMouseLeave={this.props.handleIconHoverOff}
                                 />
                             </a>
-                            <a href="https://www.linkedin.com/in/joshleedev/" target="_blank">
-                                <img 
-                                    id="linkedin-icon" 
-                                    className="social-link-icon"
-                                    onMouseOver={this.props.handleIconHover} 
-                                    onMouseLeave={this.props.handleIconHoverOff} 
-                                    src={LinkedInIcon} 
+                            <a id="linkedin__wrapper" href="https://www.linkedin.com/in/joshleedev/" target="_blank" onMouseOver={this.props.handleIconHover} onMouseLeave={this.props.handleIconHoverOff}>
+                                <object
+                                    type="image/svg+xml"
+                                    className="social-link-icon" 
+                                    data={LinkedInIcon} 
                                     alt="linkedIn"
                                 />
                             </a>
                             <a href="mailto: joshlee.dev@gmail.com">
-                                <img 
+                                <img
                                     id="email-icon" 
                                     className="social-link-icon"
                                     onMouseOver={this.props.handleIconHover} 

@@ -1,75 +1,175 @@
 .featured-projects__wrapper {
+    width: 100%;
+    display: none;
+}
+
+.projects-content__featured__title {
+    text-align: center;
+}
+
+.projects-content__featured__projects-wrapper {
     display: flex;
-    flex-direction: row;
-    text-align: justify;
-    height: auto;
-    justify-self: center;
-    margin: 0 9vw;
-    background-color: $yellow;
-}
-
-.featured-project__image {
-    width: 40%;
-    height: auto;
-    object-fit: cover;
-}
-
-
-.github-icon {
-    padding: 0;
-    height: $l-size;
-    margin-left: $s-size;
-    border-bottom: 2px solid $yellow;
-}
-
-.github-icon:hover {
-    border-bottom: 2px solid $dark-gray;
-}
-
-.github-link {
-    text-decoration: none;
-    color: white;
-}
-
-.repo-text {
-    margin: 0;
-    padding: 0;
-}
-
-.featured-project__header-title-wrapper {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    height: min-content;
+    padding: $m-size 0;
+    height: 20rem;
 }
 
-.featured-project__techstack {
-    margin: 0;
+.projects-content__featured__project__spotlight {
+    width: 32.5rem;
+    height: 20rem;
+    border-radius: 4px;
 }
 
-.featured-project__body-wrapper {
-    padding: 0 $xl-size;
+
+.featured-project__body-wrapper{
+    font-size: 2rem;
+    padding: 0 10vw;
+    height: fit-content;
+    align-self: center;
+}
+
+.featured-projects__wrapper-mobile{
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-projects__mobile-title-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.featured-projects__mobile-title{
+    display: flex;
+    flex-grow: 1;
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: $l-size $xl-size;
-}
-
-.featured-project__body-text-wrapper {
-    justify-self: baseline;
-}
-
-.featured-project__header-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
-.featured-project__body-title {
-    margin: 0;    
-    letter-spacing: $xs-size;
+    background-color: $yellow;
+    padding-right: 6vw;
+    height: 6vh;
+    justify-content: center;
+    align-items: center;
     text-transform: uppercase;
 }
+
+.featured-projects__mobile-image{
+    width: 100%;
+    border-top: 1px solid $yellow;
+}
+
+.github-icon__mobile{
+    height: 6vh;
+}
+
+.featured-project__body-text__mobile{
+    padding: 2vh 10vw;
+    display: flex;
+}
+
+@media (min-width: 800px) {
+    .featured-project__body-text__mobile{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1280px){
+
+    .featured-projects__wrapper-mobile{
+        display: none;
+    }
+
+    .featured-projects__wrapper {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        height: auto;
+        justify-self: center;
+        
+        width: 75vw;
+    }
+
+    .projects-content__featured__title {
+        text-align: left;
+    }
+    
+    .featured-project__image {
+        width: 40.5%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .featured-github-icon__wrapper{
+        display: flex;
+        align-content: center;
+    }
+
+    .github-icon {
+        height: $l-size;
+    }
+    
+    .github-link {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .repo-text {
+        margin: 0;
+        padding: 0;
+    }
+
+    .feature-project__description-wrapper{
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        background-color: $yellow;
+    }
+    
+    .featured-project__header-title-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: min-content;
+        background-color: $dark-gray;
+        padding: 2vh 2vw 0 2vw;
+    }
+    
+    .featured-project__techstack {
+        margin: 0;
+        background-color: $dark-gray;
+        padding: 0 2vw 2vh 2vw;
+        font-weight: normal;
+        font-size: 1.75rem;
+    }
+    
+    .featured-project__header-wrapper {
+        color: white;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .featured-project__body-wrapper {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .featured-project__body-text-wrapper {
+         padding: 0 2vw;
+         font-size: 1.75rem;
+         height: fit-content;
+         align-self: center;
+         color: white;
+    }
+    
+    .featured-project__body-title {
+        margin: 0;    
+        letter-spacing: $xs-size;
+        text-transform: uppercase;
+    }
+}
+
+
 
 
 

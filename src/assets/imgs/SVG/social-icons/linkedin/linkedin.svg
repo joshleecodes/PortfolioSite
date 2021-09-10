@@ -1,1 +1,12 @@
-<svg id="Square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.73 141.73"><defs><style>.cls-1{fill:#4a4a4a;}.cls-2{font-size:115px;fill:#fff;font-family:Myriad Pro;font-weight:700;}</style></defs><title>Linkedin Grey</title><rect class="cls-1" width="141.73" height="141.73"/><text class="cls-2" transform="translate(22.42 105.75)">in</text></svg>
+<svg id="Square" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="https://www.linkedin.com/in/joshleedev/" viewBox="0 0 141.73 141.73">
+    <defs>
+        <style>
+            @import url('http://fonts.cdnfonts.com/css/myriad-pro');
+            .cls-1{fill:#4a4a4a;}
+            .cls-2{font-size:115px;fill:#fff;font-family:Myriad Pro;font-weight:700;}
+        </style>
+    </defs>
+    <title>Linkedin Grey</title>
+    <rect class="cls-1" width="141.73" height="141.73"/>
+    <text class="cls-2" transform="translate(22.42 105.75)">in</text>
+</svg>

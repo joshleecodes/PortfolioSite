@@ -1,52 +1,112 @@
 .home-section {
-    padding: 22.75rem 20rem 22.75rem 20rem;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    min-width: 76vw;
-    max-width: 76vw;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: $off-white;
 }
 
 .home-content__text-block {
-    padding-top: $xl-size;
-    margin-left: $xxl-size;
-}
-
-.home-content__text-block__title__wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 0 15vw;
 }
 
-.home-content__text-block__title-highlight {
-    padding-left: $xs-size;
-    color: $yellow;
+.home-content__text-block__title{
+    margin-bottom: 1vh;
+}
+
+.home-content__text-block__title__wrapper{
+    display: flex;
+    
 }
 
 .home-content__text-block__body {
-    font-size: 2rem;
-    line-height: $l-size;
+    font-size: 1.6rem;
+    margin-bottom: 0;
 }
 
-//Image Styling
+.home-content__image-mobile {
+    width: 76vw;
+    align-self: flex-end;
+    padding-right: 12vw;
+}
+
 .home-content__image-wrapper {
-    position: relative;
-    text-align: center;
-    width: fit-content;
+    display: none;
 }
 
-.home-content__image {
-    padding-top: $m-size;
-    padding-right: $xxl-size;
-    width: 100%;
-    height: auto;
-    justify-self: right;
+
+@media (min-width: 600px) {
+    .home-section {
+        background-color: white;
+        justify-content: center;
+        height: 92vh;
+        padding-top: 8vh;
+    }
 }
 
-.carousel__wrapper-skills {
-    position: absolute;
-    top: 57%;
-    left: 37.5%;
-    padding: 0;
-    width: 25%;
+@media (min-width: 600px) {
+    .home-content__text-block__body{
+        font-size: 2rem;
+    }
+
 }
 
+
+////////////////////////////////////
+
+@media (min-width: 1280px) {
+    .home-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: white;
+        justify-content: center;
+    }
+    
+    .home-content__text-block {
+        width: 35vw;
+        padding: 0;
+    }
+    
+    .home-content__text-block__title__wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .home-content__text-block__title-highlight {
+        padding-left: $xs-size;
+        color: $yellow;
+    }
+    
+    .home-content__text-block__body {
+        font-size: 1.8rem;
+        line-height: $l-size;
+    }
+    
+    //Image Styling
+    .home-content__image-wrapper {
+        display: flex;
+        text-align: center;
+        padding: 4vh 0 0 2vw;
+    }
+    
+    .home-content__image {
+        height: 50vh;
+        justify-self: right;
+    }
+
+    .home-content__image-mobile {
+        display: none;
+    }
+    
+    .carousel__wrapper-skills {
+        position: absolute;
+        top: 56%;
+        left: 37.75%;
+        padding: 0;
+        width: 24.5%;
+    } 
+}

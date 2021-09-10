@@ -1,16 +1,35 @@
 .contact-section {
-    padding: 15rem 10rem;
     background-color: $off-white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    min-height: 55vh;
-    max-height: 55vh;
+    height: 85vh;
+    width: 100%;
 }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    align-items: center;
+}
+
+.contact-form__personal-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .contact-title__wrapper {
     display: flex;
-    padding-bottom: $xl-size;
+    padding-bottom: 4vh;
+}
+
+.contact-text {
+    padding: 0 15vw;
+    text-align: center;
 }
 
 .contact-title__highlight {
@@ -18,39 +37,13 @@
     padding-left: $xs-size;
 }
 
-.contact__social-wrapper {
-    padding: 0;
-}
-
 .contact__title {
-    margin-bottom: 0;
+    padding-bottom: 2vh;
+    text-align: center;
 }
 
-.contact__social-link {
-    width: 7rem;
-    padding: 0 $xs-size;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input, textarea {
-    border: 1px solid $light-gray;
-    margin: $xs-size;
-    padding: $xs-size;
-    font-size: $m-size;
-    font-family: $body-font;
-}
-
-input:focus, textarea:focus {
-    outline: 1px solid $yellow;
-}
-
-.contact-form__message {
-    resize: none;
-    height: 10rem;
+.contact-form__containter {
+    display: none;
 }
 
 .contact-form__submit {
@@ -64,16 +57,121 @@ input:focus, textarea:focus {
     width: 50%;
     padding: $s-size;
     margin: $s-size;
-    transition: all 0.2s ease-in-out;
 }
 
-.contact-form__submit:hover {
-    color: none;
-    background: $yellow;
-    border: 1px solid $yellow;
-    width: 98%;
+input, textarea {
+    border: 1px solid $light-gray;
+    margin: $xs-size;
+    padding: $xs-size;
+    font-size: $m-size;
+    font-family: $body-font;
+    width: 35vw;
 }
 
-.feedback__message {
-    color: $yellow;
+input:focus, textarea:focus {
+    outline: 1px solid $yellow;
+}
+
+.contact-form__message {
+    resize: none;
+    height: 10rem;
+}
+
+.contact-button__mobile {
+    display: flex;
+    padding: 1vh 2vw;
+    color: #F5A623;
+    background-color: $off-white;
+    font-weight: bold;
+    border: 1px solid #F5A623;
+    margin-top: 3vh;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-self: center;
+    text-decoration: none;
+}
+
+@media (min-width: 800px) {
+    .contact-text{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .contact-section {
+        padding: 15vh 0 15vh 0;
+        height: 60vh;
+    }
+
+    .contact__title__wrapper{
+        padding-bottom: 3vh;
+    }
+
+    .contact-form__containter {
+        display: flex;
+    }
+    
+    .contact-button__mobile{
+        background-color: $yellow;
+        color: $off-white;
+        font-weight: lighter;
+        letter-spacing: .25rem;
+        
+    }
+
+    .contact-button__mobile:hover{
+        background-color: $off-white;
+        color: $yellow;
+    }
+    
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input, textarea {
+        border: 1px solid $light-gray;
+        margin: $xs-size;
+        padding: $xs-size;
+        font-size: $m-size;
+        font-family: $body-font;
+    }
+
+    input:focus, textarea:focus {
+        outline: 1px solid $yellow;
+    }
+
+    .contact-form__message {
+        resize: none;
+        height: 20vh;
+    }
+
+    .contact-form__personal-info__name, .contact-form__personal-info__email, .contact-form__message {
+        padding: 2.5%;
+    }
+
+    .contact-form__submit {
+        align-self: center;
+        background-color: $dark-gray;
+        border: 1px solid $dark-gray;
+        outline: none;
+        color: white;
+        font-family: $body-font;
+        font-size: $m-size;
+        width: 50%;
+        padding: $s-size;
+        margin-top: 0.75vh;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .contact-form__submit:hover {
+        color: none;
+        background: $yellow;
+        border: 1px solid $yellow;
+        width: 92.5%;
+    }
+
+    .feedback__message {
+        color: $yellow;
+    }
 }

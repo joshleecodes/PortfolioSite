@@ -1,1 +1,14 @@
-<svg id="Square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.94 141.94"><defs><style>.cls-1{fill:#fff;stroke:#f3a623;stroke-miterlimit:10;stroke-width:4px;}.cls-2{font-size:115px;fill:#f3a623;font-family:Myriad Pro;font-weight:700;}</style></defs><title>Linkedin Inverted Yellow</title><rect class="cls-1" x="2" y="2" width="137.94" height="137.94"/><text class="cls-2" transform="translate(22.52 105.86)">in</text></svg>
+<svg id="Square" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="https://www.linkedin.com/in/joshleedev/" viewBox="0 0 141.94 141.94">
+    <defs>
+        <style>
+            @import url('http://fonts.cdnfonts.com/css/myriad-pro');
+            .cls-1{fill:#fff;stroke:#f3a623;stroke-miterlimit:10;stroke-width:4px;}
+            .cls-2{font-size:115px;fill:#f3a623;font-family:Myriad Pro;font-weight:700;cursor: pointer;}
+        </style>
+    </defs>
+    <a target="_blank" xlink:href="https://www.linkedin.com/in/joshleedev/">
+        <title>Linkedin Inverted Yellow</title>
+        <rect class="cls-1" x="2" y="2" width="137.94" height="137.94"/>
+        <text class="cls-2" transform="translate(22.52 105.86)">in</text>
+    </a>
+</svg>
