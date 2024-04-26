@@ -2,6 +2,18 @@
     "projects": [
         {
             "id":"0",
+            "title":"Valorant Callout Tool",
+            "githublink":"https://github.com/joshleecodes/ValorantCallouts",
+            "projectlink":"https://joshlee.codes/",
+            "techstack":["React", "HTML", "SCSS"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/valorant-callout.png",
+            "description":"A training tool designed to allow professional Valorant teams to practise callouts, including a variety of maps, locations and operators - providing feedback to review and improve performance.",
+            "descriptionTwo":"As the game is patched and new content such as maps/operators are added, the tool is required to facilitate these changes, these considerations of expandability and scaling are shown in the coding approach.", 
+            "searchTerms": ["esports", "react", "web", "html", "scss", "ux", "aws", "training", "tool", "valorant", "gaming"],
+            "featured":"true"
+        },
+        {
+            "id":"1",
             "title":"Esports Portfolio",
             "githublink":"https://github.com/joshleecodes/tom-portfolio",
             "projectlink":"http://shasoudas.com/",
@@ -10,10 +22,10 @@
             "description":"A personal portfolio site created for a prominent Esports professional, developed using HTML/CSS and React. With a heavy focus on design and UX; resulting in a more unique and memorable experience.",
             "descriptionTwo":"It was requested the design to be minimalistic while incorporating edited pre-existing high quality media content adding visual flare to the site.", 
             "searchTerms": ["esports", "portfolio","react", "web", "html", "css", "ux", "aws"],
-            "featured":"true"
+            "featured":"false"
         },
         {
-            "id":"1",
+            "id":"2",
             "title":"Personal Portfolio",
             "githublink":"https://github.com/joshleedev/PortfolioSite",
             "projectlink":"https://joshlee.codes/",
@@ -25,7 +37,7 @@
             "featured":"false"
         },
         {
-            "id":"2",
+            "id":"3",
             "title":"LEGO Cube Solver",
             "githublink":"https://github.com/joshleedev/3YP-RubikCubeSolver",
             "projectlink":"https://github.com/joshleedev/3YP-RubikCubeSolver",
@@ -37,7 +49,7 @@
             "featured":"false"
         },
         {
-            "id":"3",
+            "id":"4",
             "title":"VoIP System",
             "githublink":"https://github.com/joshleedev/VoIP-System",
             "projectlink":"https://github.com/joshleedev/VoIP-System",
@@ -49,7 +61,7 @@
             "featured":"false"
         },
         {
-            "id":"4",
+            "id":"5",
             "title":"Augmented Reality App",
             "githublink":"https://github.com/joshleedev/SE2-AugmentedRealityApp",
             "projectlink":"https://github.com/joshleedev/SE2-AugmentedRealityApp",
@@ -61,7 +73,7 @@
             "featured":"false"
         },
         {
-            "id":"5",
+            "id":"6",
             "title":"Room Finder App",
             "githublink":"https://github.com/joshleedev/SE2-RoomFinderApp",
             "projectlink":"https://github.com/joshleedev/SE2-RoomFinderApp",
@@ -73,7 +85,7 @@
             "featured":"false"
         },
         {
-            "id": "6",
+            "id": "7",
             "title": "Car Finder App",
             "githublink": "https://github.com/joshleedev/SE2-CarLocationApp",
             "projectlink":"https://github.com/joshleedev/SE2-CarLocationApp",
