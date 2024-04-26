@@ -127,16 +127,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: $dark-gray;
+    background: $yellow;
     opacity: 0%;
     width: 98%;
     height: 100%;
-    transition: opacity 0.5s;
+    transition: opacity 0s;
+    
 }
 
 .project-overlay:hover {
     opacity: inherit;   
     z-index: 1;
+    
 }
 
 .project-title {
@@ -177,7 +179,7 @@
     }
 
     .modal-title-wrapper{
-        align-items: center;
+        align-items: start;
     }
 
     .modal-title{
@@ -191,6 +193,35 @@
     .modal-body-wrapper{
         padding: 3vh 15vw;
     }
+
+    .project-header-wrapper{
+        width: 100%;
+        background-color: $dark-gray;
+        padding: 1vh 0;
+    }
+
+    .project-title-wrapper{
+        display: flex;
+        flex-direction: row;
+        padding: 1vh 2vw 0 2vw;
+    }
+
+    .project-tech{
+        padding: 0 2vw;
+    }
+
+    .project-github-icon{
+        padding-left: 0.15vw;
+        height: 3vh;
+    }
+
+    .project-text{
+        background-color: $yellow;
+        padding: 1vh 2vw;
+        flex-grow: 1;
+        
+    }
+    
 }
 
 @media (min-width: 800px){
@@ -238,5 +269,6 @@
     .project-wrapper {
         height: 30vh;
     }
+
 
 }

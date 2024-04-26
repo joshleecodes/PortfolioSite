@@ -55,9 +55,18 @@ export default class ProjectItem extends React.Component {
                         <p className="project-tech__mobile">{this.props.techStack}</p>
                     </div>
                     <div className="project-overlay" id="project-overlay">
-                        {this.state.isHovered && <h3 className="project-title">{this.props.title}</h3>}
-                        {this.state.isHovered && <p className="project-tech">{this.props.techStack}</p>}
-                        {this.state.isHovered && <button className="project-view" onClick={()=> this.props.handleOpenProjectDesktop(this.props.id)}>SEE MORE</button>}
+                        <div className="project-header-wrapper">
+                            <div className='project-title-wrapper'>
+                                {this.state.isHovered && <h3 className="project-title">{this.props.title}</h3>}
+                                <a className="project-github-icon" href={this.props.githubLink} target="_blank">
+                                    <img className="project-github-icon" id="modal-github-icon" src={Github}/>
+                                </a>
+                            </div>
+                            {this.state.isHovered && <p className="project-tech">{this.props.techStack}</p>}
+                        </div>
+                        
+                        {this.state.isHovered && <p className="project-text">{this.props.description}</p>}
+                        
                     </div>
                     {this.state.projectOpen && 
                         <div className="modal-content">
