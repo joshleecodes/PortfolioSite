@@ -2,18 +2,66 @@
     "projects": [
         {
             "id":"0",
-            "title":"Valorant Callout Tool",
+            "title":"Counter-Strike Callout Tool",
             "githublink":"https://github.com/joshleecodes/ValorantCallouts",
             "projectlink":"https://joshlee.codes/",
             "techstack":["React", "HTML", "SCSS"],
-            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/valorant-callout.png",
-            "description":"A training tool designed to allow professional Valorant teams to practise callouts, including a variety of maps, locations and operators - providing feedback to review and improve performance.",
-            "descriptionTwo":"As the game is patched and new content such as maps/operators are added, the tool is required to facilitate these changes, these considerations of expandability and scaling are shown in the coding approach.", 
-            "searchTerms": ["esports", "react", "web", "html", "scss", "ux", "aws", "training", "tool", "valorant", "gaming"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/cs2-callout.png",
+            "description":"A training tool designed to allow casual and professional CounterStrike players to practise call-outs, providing feedback to review and improve performance. Counterstrike is a competitive team-based first person shooter, where communication can often be the deciding factor.",
+            "descriptionTwo":"As the game is updated, the tool is required to facilitate these changes - considerations of expandability and scaling are shown in the coding approach.", 
+            "searchTerms": ["esports", "react", "web", "html", "scss", "ux", "aws", "training", "tool", "counterstrike", "gaming"],
             "featured":"true"
         },
         {
-            "id":"1",
+            "id":"11",
+            "title":"Path of Exile Overlay",
+            "githublink":"https://github.com/joshleecodes/PoEOverlay",
+            "projectlink":"https://joshlee.codes/",
+            "techstack":["Electron", "Typescript", "React", "HTML", "SCSS"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/poe-overlay.png",
+            "description":"The Path of Exile overlay is a desktop web application interfacing with the games development API to improve player experience by providing multiple quality of life tools. Written as an electron application, the tool allows for a quick and easy access to various tools without interrupting the gaming experience.",
+            "descriptionTwo":"", 
+            "searchTerms": ["electron", "typescript","react", "web", "html", "scss", "ux", "poe", "path of exile", "aws", "tool", "gaming"],
+            "featured":"false"
+        },
+        {
+            "id":"10",
+            "title":"Elden Tracker",
+            "githublink":"https://github.com/LyallUK/elden-tracker",
+            "projectlink":"https://joshlee.codes/",
+            "techstack":["Electron", "Typescript", "React", "HTML", "SCSS"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/elden-tracker.png",
+            "description":"The Elden Ring tracker was created to help players collect and track in-game items and abilities. By accumilating all the items within the game and putting them into a database, this app simplifies the process of searching for and locating desired objects.",
+            "descriptionTwo":"The application is able to overlay the top of the fullscreen Elden Ring window and allows for seemless integration when searching for items.", 
+            "searchTerms": ["electron", "typescript","react", "web", "html", "scss", "ux", "aws", "elden", "ring", "tool", "gaming"],
+            "featured":"false"
+        },
+        {
+            "id":"9",
+            "title":"URL Shortener",
+            "githublink":"https://github.com/joshleecodes/url-shortener",
+            "projectlink":"https://joshlee.codes/",
+            "techstack":["React", "Node", "Express", "MongoDB", "HTML", "SCSS"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/url-shortener.png",
+            "description":"A compact project where the user enters a URL and is given shortened URL in response. Developed with a full javascript techstack (React/Node.js/Express.js/) providing hands on experience with creating a REST API to handle communication between a client and database.",
+            "descriptionTwo":"", 
+            "searchTerms": ["react", "node", "express", "mongodb", "web", "html", "scss", "ux", "aws", "backend"],
+            "featured":"false"
+        },
+        {
+            "id":"8",
+            "title":"Professional Portfolio",
+            "githublink":"https://github.com/joshleecodes/StevenClode",
+            "projectlink":"https://joshlee.codes/",
+            "techstack":["React", "HTML", "SCSS"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/steve-portfolio.png",
+            "description":"A simple yet stylish portfolio site created for a professional within the movie/cinema industry. Every developed from scratch, from layout to colour schemes and design features, adjusting relevant to feedback as the project progressed.",
+            "descriptionTwo":"", 
+            "searchTerms": ["electron", "typescript","react", "web", "html", "scss", "ux", "aws", "elden", "ring", "tool", "gaming"],
+            "featured":"false"
+        },
+        {
+            "id":"7",
             "title":"Esports Portfolio",
             "githublink":"https://github.com/joshleecodes/tom-portfolio",
             "projectlink":"http://shasoudas.com/",
@@ -25,7 +73,7 @@
             "featured":"false"
         },
         {
-            "id":"2",
+            "id":"6",
             "title":"Personal Portfolio",
             "githublink":"https://github.com/joshleedev/PortfolioSite",
             "projectlink":"https://joshlee.codes/",
@@ -37,7 +85,7 @@
             "featured":"false"
         },
         {
-            "id":"3",
+            "id":"5",
             "title":"LEGO Cube Solver",
             "githublink":"https://github.com/joshleedev/3YP-RubikCubeSolver",
             "projectlink":"https://github.com/joshleedev/3YP-RubikCubeSolver",
@@ -61,7 +109,7 @@
             "featured":"false"
         },
         {
-            "id":"5",
+            "id":"3",
             "title":"Augmented Reality App",
             "githublink":"https://github.com/joshleedev/SE2-AugmentedRealityApp",
             "projectlink":"https://github.com/joshleedev/SE2-AugmentedRealityApp",
@@ -73,7 +121,7 @@
             "featured":"false"
         },
         {
-            "id":"6",
+            "id":"2",
             "title":"Room Finder App",
             "githublink":"https://github.com/joshleedev/SE2-RoomFinderApp",
             "projectlink":"https://github.com/joshleedev/SE2-RoomFinderApp",
@@ -85,7 +133,7 @@
             "featured":"false"
         },
         {
-            "id": "7",
+            "id": "1",
             "title": "Car Finder App",
             "githublink": "https://github.com/joshleedev/SE2-CarLocationApp",
             "projectlink":"https://github.com/joshleedev/SE2-CarLocationApp",
