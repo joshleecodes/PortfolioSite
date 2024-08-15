@@ -84,7 +84,7 @@ export default class MobileMenu extends React.Component {
                 </a>
                 {this.state.menuOpen &&
                     <div className="menu-list__wrapper" data-aos="flip-right" data-aos-duraction="200" data-aos-mirror="true">
-                        <div className="menu-list">
+                        <div className="-list">
                             <NavLink className="" to="#landing-content" onClick={this.handleCloseMenu}><img className="menu__site-icon" id="menu-landing" src={SiteLogo} /></NavLink>
                             <div className="menu-option">
                                 <NavLink className="menu-link" id="menu-home" to="#home-content" onClick={this.handleCloseMenu}>ABOUT</NavLink>
