@@ -13,6 +13,18 @@
             "featured":"true"
         },
         {
+            "id":"12",
+            "title":"ALB Kliniken",
+            "githublink":"https://github.com/joshleecodes/alb",
+            "projectlink":"https://joshlee.codes/",
+            "techstack":["React", "HTML", "SCSS"],
+            "image": "https://joshlee-media.s3.eu-west-2.amazonaws.com/alb-kliniken.png",
+            "description":"A freelance project for a optical clinic based in Lund, Sweden. Specialising in cataract operations, the client required a clear and professional website to display relevant information to existing and potential patients.",
+            "descriptionTwo":"", 
+            "searchTerms": ["electron", "typescript","react", "web", "html", "scss", "ux", "poe", "aws", "tool"],
+            "featured":"false"
+        },
+        {
             "id":"11",
             "title":"Path of Exile Overlay",
             "githublink":"https://github.com/joshleecodes/PoEOverlay",
